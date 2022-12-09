@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_74742715-98D4-4907-A203-0EEB67AF2AD3" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_5F01039F-4577-4B52-A499-7B4CF9403B57" name="EventDistribution" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_74742715-98D4-4907-A203-0EEB67AF2AD3">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_BEAD710D-0477-478C-BA02-AE684356954A" name="tevent" isCollection="false">
+    <dmn:itemComponent id="_381EB3D8-0836-41AD-8663-5AF230324BF0" name="eventName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_22D32726-1058-4CEA-9707-576437157A87" name="subEvent" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_AE5F0D3C-0168-4E02-8B53-6C70FAFEC98C" name="responseCode" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_09EAEEA8-0402-49EA-B25A-9C9F94CF6E79" name="txnAmount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_967EF470-A109-4F46-AE4C-F9343142DCEE" name="Event">
+    <dmn:extensionElements/>
+    <dmn:variable id="_88DCD8BA-D67A-4B9A-A3C4-3EBEB7E66809" name="Event" typeRef="tevent"/>
+  </dmn:inputData>
+  <dmn:decision id="_171B000F-A734-401A-82EB-190501C9F4F1" name="eventStreamdata">
+    <dmn:extensionElements/>
+    <dmn:variable id="_0EF05D67-D4DF-4F6C-8D20-60A81AB30346" name="eventStreamdata" typeRef="Any"/>
+    <dmn:informationRequirement id="_AAE71EB1-0A52-4624-8C17-04F605AF05BB">
+      <dmn:requiredInput href="#_967EF470-A109-4F46-AE4C-F9343142DCEE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_9B5838CA-27AD-4C93-8D91-7F0A39E5C9AE" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_4ED04829-0C2F-47CE-AE21-E61D2BA8D9EE">
+        <dmn:inputExpression id="_4EACE6BF-A4A0-46FC-83DA-BFD41386BADF" typeRef="string">
+          <dmn:text>Event.eventName</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_91C05077-5BBA-4E42-834F-3141E8D06F25">
+        <dmn:inputExpression id="_BD018E05-9729-4D61-90B8-7BEDB172B110" typeRef="string">
+          <dmn:text>Event.subEvent</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_73624F4B-8E7E-43D5-AEDC-48FD84C02707">
+        <dmn:inputExpression id="_79E43357-2283-4286-B7BA-5D051BF6A25B" typeRef="number">
+          <dmn:text>Event.responseCode</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_37CC1C91-9AAE-4A15-9E3C-0EF157208BA2" name="triggerEventname" typeRef="string"/>
+      <dmn:output id="_393B74B3-4648-4D15-8A34-5A9BA8F87AFC" name="eventDescription" typeRef="Any"/>
+      <dmn:output id="_B1C675BA-DE0F-4B75-A335-F77028F38004" name="txnAmount" typeRef="number"/>
+      <dmn:annotation name="Description"/>
+      <dmn:rule id="_8CDA5CB3-33CB-405B-AA52-E0C73CC54953">
+        <dmn:inputEntry id="_02A702A6-C1F3-4581-9F89-97E83EEC6EC6">
+          <dmn:text>"AUTH_EVENT"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_ACA7260B-E9C2-48F0-B94B-35F2D8FAF7E6">
+          <dmn:text>"100"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_719C978B-9DDF-4D6A-AD64-C19612AE28F9">
+          <dmn:text>= 0</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_69935BF5-7D5E-4BC8-9ED2-022AE5E40177">
+          <dmn:text>[ "NOTC_AUTH_101", "UPD_AUTH_DB_101" ]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_6D98D977-BB83-44A4-A29B-7D01FB65B0CD">
+          <dmn:text>["UPDATE DB", "SEND SMS" ] </dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_5D179CC9-5409-4F92-9A50-89838CFF206C">
+          <dmn:text>Event.txnAmount</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>MTI 100 APPROVED</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E3099F33-93E7-4AE0-ADB2-3AE88FFF74A2">
+        <dmn:inputEntry id="_562679F6-B38C-4DED-85D0-3D033D75D165">
+          <dmn:text>"AUTH_EVENT"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_562ACFD8-58FD-4424-8146-6BEACEB9536B">
+          <dmn:text>"100"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8CE06A9B-5E69-4623-A183-F5D56414F671">
+          <dmn:text>not(0)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_4BCAD88A-DA6E-49BD-A54F-7F84C54EF455">
+          <dmn:text>[ "NOTC_AUTH_101"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9E6576C2-1A6F-4E91-9080-4AA939F0C4C7">
+          <dmn:text>[ "SEND SMS"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_3D06D718-396F-4E3E-959A-903C23B52241">
+          <dmn:text>Event.txnAmount</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>MTI 100 DECLINED</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_7B15BA28-4266-45CA-8F40-1A04DF89AEE8">
+        <dmn:inputEntry id="_09DEC867-7798-448D-8FA5-DD567CD703E5">
+          <dmn:text>"AUTH_EVENT"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EAE5A6DC-2BA9-4A8C-8177-3873020F7076">
+          <dmn:text>"400"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EABC9390-25E6-479E-B56A-BFAC8D417CFB">
+          <dmn:text>= 0 </dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_954E1384-845C-4957-991F-7C320F152FCA">
+          <dmn:text>[ "NOTC_AUTH_101", "UPD_AUTH_DB_101" ]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D40F7331-AD4F-4DAB-839A-59AA82E6703C">
+          <dmn:text>[ "UPDATE DB" , "SEND SMS"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_45DCE430-593B-4169-A540-D517CC439983">
+          <dmn:text>Event.txnAmount</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>MTI 400 APPROVED</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_9E730D79-0E5B-4F6A-8DDC-6954EC21832D" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_9B5838CA-27AD-4C93-8D91-7F0A39E5C9AE">
+            <kie:width>50</kie:width>
+            <kie:width>139</kie:width>
+            <kie:width>128</kie:width>
+            <kie:width>159</kie:width>
+            <kie:width>337</kie:width>
+            <kie:width>225</kie:width>
+            <kie:width>144</kie:width>
+            <kie:width>158</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_967EF470-A109-4F46-AE4C-F9343142DCEE" dmnElementRef="_967EF470-A109-4F46-AE4C-F9343142DCEE" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="209" y="175" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_171B000F-A734-401A-82EB-190501C9F4F1" dmnElementRef="_171B000F-A734-401A-82EB-190501C9F4F1" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="460" y="170" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_AAE71EB1-0A52-4624-8C17-04F605AF05BB-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_AAE71EB1-0A52-4624-8C17-04F605AF05BB">
+        <di:waypoint x="259" y="175"/>
+        <di:waypoint x="510" y="220"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
