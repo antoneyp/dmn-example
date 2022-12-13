@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_e9_dQFNwEDuDc8dv1jahQQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_OVHDUFwfEDub4JBkEV7U3g" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_eventItem" structureRef="org.acme.Event"/>
-  <bpmn2:itemDefinition id="_eventStreamdataItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="_updateDataItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="_notificationDataItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_namespaceInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_modelInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_decisionInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_EventInputXItem" structureRef="org.acme.Event"/>
-  <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_eventStreamdataOutputXItem" structureRef="Object"/>
-  <bpmn2:collaboration id="_95CDBF25-755E-4C71-A915-8206274E4959" name="Default Collaboration">
-    <bpmn2:participant id="_8E159788-1581-4815-8E9F-56CE83F32A2C" name="Pool Participant" processRef="Events"/>
+  <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_updateDataOutputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_notificationDataOutputXItem" structureRef="Object"/>
+  <bpmn2:collaboration id="_8A63F466-C809-47AE-BF43-A54985B3FFC5" name="Default Collaboration">
+    <bpmn2:participant id="_D2AD3304-64FB-4D95-995D-9A42512D99AD" name="Pool Participant" processRef="Events"/>
   </bpmn2:collaboration>
   <bpmn2:process id="Events" drools:packageName="org.acme" drools:version="1.0" drools:adHoc="false" name="Evaluate Process List" isExecutable="true" processType="Public">
     <bpmn2:property id="event" itemSubjectRef="_eventItem" name="event"/>
-    <bpmn2:property id="eventStreamdata" itemSubjectRef="_eventStreamdataItem" name="eventStreamdata"/>
+    <bpmn2:property id="updateData" itemSubjectRef="_updateDataItem" name="updateData"/>
+    <bpmn2:property id="notificationData" itemSubjectRef="_notificationDataItem" name="notificationData"/>
     <bpmn2:sequenceFlow id="_2778EFD6-803D-4FD2-B02C-5D499E597BF7" sourceRef="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF" targetRef="_DFC9E492-B2D7-4F75-B39D-C54BF34FF23E"/>
     <bpmn2:sequenceFlow id="_B59194FD-1C3D-4C3B-84F1-1D87E6CE628C" sourceRef="_DC044A08-6BE9-4FCB-8060-521730FE7BAE" targetRef="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF"/>
     <bpmn2:endEvent id="_DFC9E492-B2D7-4F75-B39D-C54BF34FF23E">
@@ -31,7 +34,8 @@
         <bpmn2:dataInput id="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_decisionInputX" drools:dtype="java.lang.String" itemSubjectRef="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_decisionInputXItem" name="decision"/>
         <bpmn2:dataInput id="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_modelInputX" drools:dtype="java.lang.String" itemSubjectRef="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_modelInputXItem" name="model"/>
         <bpmn2:dataInput id="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_EventInputX" drools:dtype="org.acme.Event" itemSubjectRef="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_EventInputXItem" name="Event"/>
-        <bpmn2:dataOutput id="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_eventStreamdataOutputX" drools:dtype="Object" itemSubjectRef="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_eventStreamdataOutputXItem" name="eventStreamdata"/>
+        <bpmn2:dataOutput id="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_updateDataOutputX" drools:dtype="Object" itemSubjectRef="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_updateDataOutputXItem" name="updateData"/>
+        <bpmn2:dataOutput id="_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_notificationDataOutputX" drools:dtype="Object" itemSubjectRef="__0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_notificationDataOutputXItem" name="notificationData"/>
         <bpmn2:inputSet>
           <bpmn2:dataInputRefs>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_namespaceInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_decisionInputX</bpmn2:dataInputRefs>
@@ -39,7 +43,8 @@
           <bpmn2:dataInputRefs>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_EventInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet>
-          <bpmn2:dataOutputRefs>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_eventStreamdataOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_updateDataOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_notificationDataOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation>
@@ -68,8 +73,12 @@
         <bpmn2:targetRef>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_EventInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation>
-        <bpmn2:sourceRef>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_eventStreamdataOutputX</bpmn2:sourceRef>
-        <bpmn2:targetRef>eventStreamdata</bpmn2:targetRef>
+        <bpmn2:sourceRef>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_updateDataOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>updateData</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_0ED74C33-6DA8-4332-9936-3F9C0A2BEBDF_notificationDataOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>notificationData</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:businessRuleTask>
     <bpmn2:startEvent id="_DC044A08-6BE9-4FCB-8060-521730FE7BAE" name="Start Process">
@@ -137,7 +146,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_e9_dQFNwEDuDc8dv1jahQQ</bpmn2:source>
-    <bpmn2:target>_e9_dQFNwEDuDc8dv1jahQQ</bpmn2:target>
+    <bpmn2:source>_OVHDUFwfEDub4JBkEV7U3g</bpmn2:source>
+    <bpmn2:target>_OVHDUFwfEDub4JBkEV7U3g</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>

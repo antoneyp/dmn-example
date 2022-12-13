@@ -2,16 +2,61 @@
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_74742715-98D4-4907-A203-0EEB67AF2AD3" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_5F01039F-4577-4B52-A499-7B4CF9403B57" name="EventDistribution" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_74742715-98D4-4907-A203-0EEB67AF2AD3">
   <dmn:extensionElements/>
   <dmn:itemDefinition id="_BEAD710D-0477-478C-BA02-AE684356954A" name="tevent" isCollection="false">
-    <dmn:itemComponent id="_381EB3D8-0836-41AD-8663-5AF230324BF0" name="eventName" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_22D32726-1058-4CEA-9707-576437157A87" name="subEvent" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_AE5F0D3C-0168-4E02-8B53-6C70FAFEC98C" name="responseCode" isCollection="false">
+    <dmn:itemComponent id="_22D32726-1058-4CEA-9707-576437157A87" name="mti" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_09EAEEA8-0402-49EA-B25A-9C9F94CF6E79" name="txnAmount" isCollection="false">
+    <dmn:itemComponent id="_0B1BBC7A-73E4-4B3B-92AB-97BF13CDAD13" name="messageId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_404ADD57-438C-43AA-A7DA-61A2D42A92A0" name="messageType" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_99A628C9-E86A-4695-8A27-19A2C5F9D8E0" name="accountId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9C2F3814-F00D-435C-A65D-C699CBC57D3D" name="cardId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_7A8F9BCA-270F-4B1E-BA11-183AAC9ACDFB" name="balanceTypelist" isCollection="false">
+      <dmn:typeRef>Any</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_2B5D4078-3185-44AD-955D-E3E8AE8CE6BE" name="responseCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B832D2CA-ACAF-451D-937B-97E113D9B07F" name="transactionBillamount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_91CA0FEB-1B26-4F8B-AF3D-C9A1873F810F" name="debit" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_22AC948A-06D3-4463-A901-5DB9A8F19881" name="limitList" isCollection="false">
+      <dmn:typeRef>Any</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_132E034F-9AB1-464B-BE73-B0CAA367F00F" name="org" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_05834F36-813B-44F2-9347-0DE6756926C6" name="product" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_58236FB3-5326-43B6-86BF-51C1F35DDA7A" name="primaryCin" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B218EA3D-84F0-49FE-AB5F-2B3CDEA44CF7" name="secondaryCin" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8438D593-B5F7-4D02-BD7D-135ECFD69129" name="txnCurrencycode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_34B6315F-FAD1-4E02-B11F-E42D94F6F966" name="txnAmount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_446DB64F-27DB-4DBA-A9F7-C756503FC1D9" name="merchantName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_AAD89D5D-9D1C-4161-82FE-01E1F4245421" name="maskedInstrument" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_1AF72CAE-2BFD-449A-B390-AC21DA140E21" name="availableLimit" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
@@ -19,99 +64,284 @@
     <dmn:extensionElements/>
     <dmn:variable id="_88DCD8BA-D67A-4B9A-A3C4-3EBEB7E66809" name="Event" typeRef="tevent"/>
   </dmn:inputData>
-  <dmn:decision id="_171B000F-A734-401A-82EB-190501C9F4F1" name="eventStreamdata">
+  <dmn:decision id="_171B000F-A734-401A-82EB-190501C9F4F1" name="updateData">
     <dmn:extensionElements/>
-    <dmn:variable id="_0EF05D67-D4DF-4F6C-8D20-60A81AB30346" name="eventStreamdata" typeRef="Any"/>
+    <dmn:variable id="_0EF05D67-D4DF-4F6C-8D20-60A81AB30346" name="updateData" typeRef="Any"/>
     <dmn:informationRequirement id="_AAE71EB1-0A52-4624-8C17-04F605AF05BB">
       <dmn:requiredInput href="#_967EF470-A109-4F46-AE4C-F9343142DCEE"/>
     </dmn:informationRequirement>
     <dmn:decisionTable id="_9B5838CA-27AD-4C93-8D91-7F0A39E5C9AE" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_4ED04829-0C2F-47CE-AE21-E61D2BA8D9EE">
-        <dmn:inputExpression id="_4EACE6BF-A4A0-46FC-83DA-BFD41386BADF" typeRef="string">
-          <dmn:text>Event.eventName</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
       <dmn:input id="_91C05077-5BBA-4E42-834F-3141E8D06F25">
-        <dmn:inputExpression id="_BD018E05-9729-4D61-90B8-7BEDB172B110" typeRef="string">
-          <dmn:text>Event.subEvent</dmn:text>
+        <dmn:inputExpression id="_BD018E05-9729-4D61-90B8-7BEDB172B110" typeRef="number">
+          <dmn:text>Event.mti</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_73624F4B-8E7E-43D5-AEDC-48FD84C02707">
-        <dmn:inputExpression id="_79E43357-2283-4286-B7BA-5D051BF6A25B" typeRef="number">
+        <dmn:inputExpression id="_79E43357-2283-4286-B7BA-5D051BF6A25B" typeRef="string">
           <dmn:text>Event.responseCode</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_37CC1C91-9AAE-4A15-9E3C-0EF157208BA2" name="triggerEventname" typeRef="string"/>
-      <dmn:output id="_393B74B3-4648-4D15-8A34-5A9BA8F87AFC" name="eventDescription" typeRef="Any"/>
-      <dmn:output id="_B1C675BA-DE0F-4B75-A335-F77028F38004" name="txnAmount" typeRef="number"/>
+      <dmn:output id="_37CC1C91-9AAE-4A15-9E3C-0EF157208BA2" name="mti" typeRef="string"/>
+      <dmn:output id="_393B74B3-4648-4D15-8A34-5A9BA8F87AFC" name="messageId" typeRef="string"/>
+      <dmn:output id="_B1C675BA-DE0F-4B75-A335-F77028F38004" name="messageType" typeRef="string"/>
+      <dmn:output id="_164218BA-0298-4834-B238-AED1A1B9A5AB" name="accountId" typeRef="string"/>
+      <dmn:output id="_2F2F613A-66DB-4DCC-91C5-A5C4BB2030CE" name="cardId" typeRef="string"/>
+      <dmn:output id="_163E9F90-DE97-4D74-BC40-35FD44241364" name="responseCode" typeRef="string"/>
+      <dmn:output id="_ADF32CE4-1BC1-4B8C-A815-409DA73DC7A7" name="transactionBillamount" typeRef="number"/>
+      <dmn:output id="_13F5E006-1671-45D1-96D2-380FFBEEB724" name="debit" typeRef="string"/>
+      <dmn:output id="_5F630E64-4065-465C-80E7-A1C689060A96" name="org" typeRef="number"/>
+      <dmn:output id="_AF1DB1A0-5122-45AA-B2DA-6E3C8BD056D2" name="product" typeRef="number"/>
+      <dmn:output id="_FB8EB4FF-A0F5-442F-B460-0B0AEC245FB6" name="limitList" typeRef="Any"/>
+      <dmn:output id="_496A94AA-202C-4C61-8E1F-7B5CACF8E46A" name="balanceTypelist" typeRef="Any"/>
       <dmn:annotation name="Description"/>
       <dmn:rule id="_8CDA5CB3-33CB-405B-AA52-E0C73CC54953">
-        <dmn:inputEntry id="_02A702A6-C1F3-4581-9F89-97E83EEC6EC6">
-          <dmn:text>"AUTH_EVENT"</dmn:text>
-        </dmn:inputEntry>
         <dmn:inputEntry id="_ACA7260B-E9C2-48F0-B94B-35F2D8FAF7E6">
-          <dmn:text>"100"</dmn:text>
+          <dmn:text>= 100</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_719C978B-9DDF-4D6A-AD64-C19612AE28F9">
-          <dmn:text>= 0</dmn:text>
+          <dmn:text>"00"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_69935BF5-7D5E-4BC8-9ED2-022AE5E40177">
-          <dmn:text>[ "NOTC_AUTH_101", "UPD_AUTH_DB_101" ]</dmn:text>
+          <dmn:text>Event.mti</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_6D98D977-BB83-44A4-A29B-7D01FB65B0CD">
-          <dmn:text>["UPDATE DB", "SEND SMS" ] </dmn:text>
+          <dmn:text>Event.messageId</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_5D179CC9-5409-4F92-9A50-89838CFF206C">
-          <dmn:text>Event.txnAmount</dmn:text>
+          <dmn:text>Event.messageType</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_58FB606F-6834-4296-BFBA-408C37B0F928">
+          <dmn:text>Event.accountId</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_AD8A6B87-340A-4C87-A3D9-1B0F96363C9F">
+          <dmn:text>Event.cardId</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_57FC6A6C-D2DA-48FD-B8D0-D3E05BF47AC8">
+          <dmn:text>Event.responseCode</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B0840BC0-E1AE-4F04-B36B-CADDA41C484B">
+          <dmn:text>Event.transactionBillamount</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_08C511FB-84CA-487B-B68D-CCE272FD3C52">
+          <dmn:text>Event.debit</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E417E704-4916-4DED-AFDA-042D24A911DD">
+          <dmn:text>Event.org</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_14B407CE-7069-4D0A-9B26-21CFE45E5403">
+          <dmn:text>Event.product</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_41E4E457-3ABB-4C60-B2DF-C5FD148431C4">
+          <dmn:text>Event.limitList</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CE6CC62B-85CB-43AD-9701-B4EEBF5A2EB7">
+          <dmn:text>Event.balanceTypelist</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>MTI 100 APPROVED</dmn:text>
+          <dmn:text>MTI 100 DB Update</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_E3099F33-93E7-4AE0-ADB2-3AE88FFF74A2">
-        <dmn:inputEntry id="_562679F6-B38C-4DED-85D0-3D033D75D165">
-          <dmn:text>"AUTH_EVENT"</dmn:text>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_130D86FB-5930-440B-AD60-FCA97255EDB8" name="notificationData">
+    <dmn:extensionElements/>
+    <dmn:variable id="_E447643C-C216-4D42-AB47-4B7CFB5F9445" name="notificationData" typeRef="Any"/>
+    <dmn:informationRequirement id="_3692E5EF-13C5-4A02-845A-B1B1FA468181">
+      <dmn:requiredInput href="#_967EF470-A109-4F46-AE4C-F9343142DCEE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_8E4CFE90-5413-4134-AEF1-CD71F05D4AF8" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_9EB97B7E-ED28-4EF6-AA2C-28640B6AC37A">
+        <dmn:inputExpression id="_3A12433E-4EF7-4DE4-92FC-9D13BCCEC1AF" typeRef="number">
+          <dmn:text>Event.mti</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_53B89E96-3620-4B41-A49B-9C875DEB0881">
+        <dmn:inputExpression id="_14F5E61F-3788-4B9E-98AE-49C8AA91DC3B" typeRef="string">
+          <dmn:text>Event.responseCode</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_3CCCAFA3-448D-42BD-A90E-97C65A016F60" name="messageId" typeRef="string"/>
+      <dmn:output id="_29613D40-65D2-444F-9C81-0CF27AD29A93" name="messageType" typeRef="string"/>
+      <dmn:output id="_08D82FB3-6C01-404E-BC5F-5BC4DB5EF7DE" name="org" typeRef="number"/>
+      <dmn:output id="_AE2310C4-7A0A-4C3A-920F-1C92C6609017" name="product" typeRef="number"/>
+      <dmn:output id="_10DEE7F6-3492-4C46-8962-D61ADAE65558" name="eventId" typeRef="string"/>
+      <dmn:output id="_EF53D593-5C74-4534-A889-3F88E546588F" name="subEventid" typeRef="string"/>
+      <dmn:output id="_97E046FE-346F-47B9-A50B-3924E36CC6EA" name="primaryCin" typeRef="string"/>
+      <dmn:output id="_00FC4453-EAB4-43B5-B496-353B94860811" name="secondaryCin" typeRef="string"/>
+      <dmn:output id="_6D4D56C9-CAE2-4C46-B82B-DCEC53C0B566" name="currency" typeRef="string"/>
+      <dmn:output id="_638EF99D-7819-4030-A0D0-48A051B068D8" name="txnAmount" typeRef="number"/>
+      <dmn:output id="_2BBB616C-1617-4E1B-BD28-D52C798065EA" name="instrumentNumber" typeRef="string"/>
+      <dmn:output id="_4891DA13-2B34-4F57-B185-1F324CB3C81E" name="merchantName" typeRef="string"/>
+      <dmn:output id="_DF1ECEA6-C7D7-487D-93C2-40812C2A0EE2" name="availableLimit" typeRef="number"/>
+      <dmn:output id="_EF70D36A-2CDB-47AB-B2A3-D7EA8732F2D1" name="decision" typeRef="string"/>
+      <dmn:output id="_D2908DE1-CE6A-4DB7-AEFD-BB10CFD32F43" name="mti" typeRef="number"/>
+      <dmn:annotation name="Description"/>
+      <dmn:rule id="_D0ED04A7-2F92-42AC-916A-BDF3D697A6F8">
+        <dmn:inputEntry id="_11A96F6D-9B9C-48EA-BAD4-F5B9E7C71944">
+          <dmn:text>= 100</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_562ACFD8-58FD-4424-8146-6BEACEB9536B">
-          <dmn:text>"100"</dmn:text>
+        <dmn:inputEntry id="_AF057D04-EA6A-4C26-9AFA-CF94D0224CD7">
+          <dmn:text>"00" </dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_8CE06A9B-5E69-4623-A183-F5D56414F671">
-          <dmn:text>not(0)</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_4BCAD88A-DA6E-49BD-A54F-7F84C54EF455">
-          <dmn:text>[ "NOTC_AUTH_101"]</dmn:text>
+        <dmn:outputEntry id="_F5A0BE07-FD93-4DDC-995E-8E630BA5A73B">
+          <dmn:text>Event.messageId</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_9E6576C2-1A6F-4E91-9080-4AA939F0C4C7">
-          <dmn:text>[ "SEND SMS"]</dmn:text>
+        <dmn:outputEntry id="_037FF6AE-2EAD-46F0-95B1-78AE1F4CC1B8">
+          <dmn:text>Event.messageType</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_3D06D718-396F-4E3E-959A-903C23B52241">
+        <dmn:outputEntry id="_443E831C-0F9D-481E-9DFC-ECCD51167AD9">
+          <dmn:text>Event.org</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_40916E92-B6E7-42E5-94B6-38F4A725BC85">
+          <dmn:text>Event.product</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A7FFB97A-B91C-4B95-A707-CF959EBEBFA8">
+          <dmn:text>"NOTC_101"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1DAF8BFC-9816-4AE3-B246-89F80676F2DE">
+          <dmn:text>"SMS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EACDBDEE-1345-4BC8-9A43-52AB0A061CE8">
+          <dmn:text>Event.primaryCin</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CEF31316-ACEE-4871-853A-CBC0218A1E60">
+          <dmn:text>Event.secondaryCin</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C76C2C24-743E-40BA-9723-219647C83BAC">
+          <dmn:text>Event.txnCurrencycode</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1E81512C-7FDB-45F1-93E6-E943F84F58FE">
           <dmn:text>Event.txnAmount</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_38F5E4F9-3657-41C5-9337-B9B2081D5BBF">
+          <dmn:text>Event.maskedInstrument</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A508CAD7-7F3A-418C-B1F2-03947717E4A8">
+          <dmn:text>Event.merchantName</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_593037CF-9708-4337-8DB6-BA19278FFA89">
+          <dmn:text>Event.availableLimit</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FA136E8D-2244-4A9B-8A24-0FB5ECE073AF">
+          <dmn:text>"Approved"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_79213B92-7B75-4450-BB52-ACAA5A0E411B">
+          <dmn:text>Event.mti</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>MTI 100 DECLINED</dmn:text>
+          <dmn:text>MTI 100 NOTC</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_7B15BA28-4266-45CA-8F40-1A04DF89AEE8">
-        <dmn:inputEntry id="_09DEC867-7798-448D-8FA5-DD567CD703E5">
-          <dmn:text>"AUTH_EVENT"</dmn:text>
+      <dmn:rule id="_675464E1-1693-4D17-8F9C-0C09259B4E86">
+        <dmn:inputEntry id="_73B38796-6C43-4C54-913F-85FDDECA711F">
+          <dmn:text>= 100</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_EAE5A6DC-2BA9-4A8C-8177-3873020F7076">
-          <dmn:text>"400"</dmn:text>
+        <dmn:inputEntry id="_2AB99E40-F3E3-4259-B55D-75060C958763">
+          <dmn:text>"85" </dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_EABC9390-25E6-479E-B56A-BFAC8D417CFB">
-          <dmn:text>= 0 </dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_954E1384-845C-4957-991F-7C320F152FCA">
-          <dmn:text>[ "NOTC_AUTH_101", "UPD_AUTH_DB_101" ]</dmn:text>
+        <dmn:outputEntry id="_16EAE818-60F6-41B0-8FF5-794C488C4010">
+          <dmn:text>Event.messageId</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_D40F7331-AD4F-4DAB-839A-59AA82E6703C">
-          <dmn:text>[ "UPDATE DB" , "SEND SMS"]</dmn:text>
+        <dmn:outputEntry id="_6F27FB30-7BFA-4E48-8EB7-CEF0CE42182B">
+          <dmn:text>Event.messageType</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_45DCE430-593B-4169-A540-D517CC439983">
+        <dmn:outputEntry id="_EF09F5A5-A92E-4E03-8240-4B6EDAA7E120">
+          <dmn:text>Event.org</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2EF6F17C-20A1-433D-A407-2471BFC649AC">
+          <dmn:text>Event.product</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_6418B77F-B484-492F-8338-5574AF3B7CAA">
+          <dmn:text>"NOTC_102"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_740EB68B-00C9-420C-92A8-C33F3EBAB623">
+          <dmn:text>"SMS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_69AA0A59-4518-41B9-B230-76E407B9650F">
+          <dmn:text>Event.primaryCin</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FDB24E28-FD36-4514-B607-B42711A8D58A">
+          <dmn:text>Event.secondaryCin</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_963D63DC-628B-42AD-ACFB-786581CF6DF5">
+          <dmn:text>Event.txnCurrencycode</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_39C3047A-B659-4EFC-94F4-9414FF34EA14">
           <dmn:text>Event.txnAmount</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_141B9CDB-89AD-4D20-8967-DDC2631016D2">
+          <dmn:text>Event.maskedInstrument</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_553838F2-F848-4FE8-9C60-FE72C26D72C6">
+          <dmn:text>Event.merchantName</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_20493BCD-7AFD-4FAE-9DDF-DA1606166DF6">
+          <dmn:text>Event.availableLimit</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_76461050-9C29-41FD-A395-CB577D8BD2F5">
+          <dmn:text>"Approved"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4757AA03-D403-4D47-8597-7107C2A73CB4">
+          <dmn:text>Event.mti</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>MTI 400 APPROVED</dmn:text>
+          <dmn:text>MTI 100 NOTC</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_08CC5F27-9768-4DD5-A67F-32943D69E71A">
+        <dmn:inputEntry id="_BA426E27-316B-4CFC-B3C9-BD13C07A63F9">
+          <dmn:text>= 100</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_A32F043C-1EEF-4FFF-A797-A1439C43D248">
+          <dmn:text>!= "00", !="85"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_18F31B9E-EF3F-447C-BB0A-AA2DA9E17C21">
+          <dmn:text>Event.messageId</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_AAAD1C3A-0E8A-453C-A97B-34BD02EF238E">
+          <dmn:text>Event.messageType</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_00E12B04-2438-4946-B60C-D7F35186CCB3">
+          <dmn:text>Event.org</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E18F294A-366C-4139-B63F-6885F4CD1001">
+          <dmn:text>Event.product</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_38D5EE58-74C0-464F-A7C7-09384575C467">
+          <dmn:text>"NOTC_103"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A123C3A1-09A8-403B-9D6F-4604F3E97484">
+          <dmn:text>"SMS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B0211AF3-9860-4942-AB5C-38D44D3ACCA5">
+          <dmn:text>Event.primaryCin</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F2E89347-C4AD-46ED-8B6E-32C14D77E0AA">
+          <dmn:text>Event.secondaryCin</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_77D9BE29-8181-433E-9A4F-82F8C4933CA4">
+          <dmn:text>Event.txnCurrencycode</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_807A1F5D-726F-4917-8406-7685D3372365">
+          <dmn:text>Event.txnAmount</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_6F7E557E-D83B-4730-A070-59FC5235BAA7">
+          <dmn:text>Event.maskedInstrument</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_801E0C15-999A-43B4-8A04-FF33EE271A25">
+          <dmn:text>Event.merchantName</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_20D78B7F-C7CB-46C6-9CDE-E83FF044A619">
+          <dmn:text>Event.availableLimit</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A4FF40D5-1649-44A7-BD39-D962632D2F1A">
+          <dmn:text>"Declined"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8872F244-9C21-4B41-9281-DB7EA55A99BF">
+          <dmn:text>Event.mti</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>MTI 100 NOTC</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
@@ -122,13 +352,42 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_9B5838CA-27AD-4C93-8D91-7F0A39E5C9AE">
             <kie:width>50</kie:width>
-            <kie:width>139</kie:width>
             <kie:width>128</kie:width>
             <kie:width>159</kie:width>
-            <kie:width>337</kie:width>
+            <kie:width>196</kie:width>
             <kie:width>225</kie:width>
             <kie:width>144</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>143</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
             <kie:width>158</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8E4CFE90-5413-4134-AEF1-CD71F05D4AF8">
+            <kie:width>50</kie:width>
+            <kie:width>117</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>112</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>117</kie:width>
+            <kie:width>145</kie:width>
+            <kie:width>212</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>220</kie:width>
+            <kie:width>152</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -150,9 +409,22 @@
         <dc:Bounds x="460" y="170" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_130D86FB-5930-440B-AD60-FCA97255EDB8" dmnElementRef="_130D86FB-5930-440B-AD60-FCA97255EDB8" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="450" y="303" width="114" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_AAE71EB1-0A52-4624-8C17-04F605AF05BB-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_AAE71EB1-0A52-4624-8C17-04F605AF05BB">
         <di:waypoint x="259" y="175"/>
         <di:waypoint x="510" y="220"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_3692E5EF-13C5-4A02-845A-B1B1FA468181-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_3692E5EF-13C5-4A02-845A-B1B1FA468181">
+        <di:waypoint x="259" y="175"/>
+        <di:waypoint x="507" y="353"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
